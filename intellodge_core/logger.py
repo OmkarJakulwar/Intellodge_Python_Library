@@ -1,0 +1,18 @@
+# Centralized logger for all application modules.
+
+
+import logging
+
+def get_logger(name="intellodge"):
+    # Return a logger with unified formatting.
+    logger = logging.getLogger(name)
+    if not logger.handlers:
+        handler = logging.StreamHandler()
+        formatter = logging.Formatter(
+            "[%(levelname)s] %(asctime)s - %(name)s: %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S"
+        )
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
+        logger.setLevel(logging.INFO)
+    return logger

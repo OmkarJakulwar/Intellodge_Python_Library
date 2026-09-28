@@ -1,0 +1,5 @@
+venv/
+dist/
+__pycache__/
+*.pyc
+intellodge_core.egg-info/
